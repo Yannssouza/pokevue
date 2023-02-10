@@ -2,11 +2,11 @@
 
 <template>
   <div
-    class="flex h-screen w-screen items-center justify-center bg-cover bg-fixed"
+    class="flex h-screen w-screen flex-col justify-between bg-cover bg-fixed"
     style="background-image: url(src/assets/23236924.jpg)"
   >
     <nav
-      class="fixed top-0 flex h-12 w-full justify-center bg-red-500 font-bold text-white xl:justify-start xl:px-8"
+      class="flex h-12 w-full justify-center bg-red-500 font-bold text-white shadow xl:justify-start xl:px-8"
     >
       <div class="flex items-center gap-10">
         <h1 class="text-2xl">Pokédex</h1>
@@ -20,7 +20,7 @@
     </main>
 
     <footer
-      class="fixed bottom-0 flex h-12 w-full items-center justify-center bg-red-500 font-bold text-white"
+      class="flex h-12 w-full items-center justify-center bg-red-500 font-bold text-white shadow"
     >
       <span class="">Pokédex {{ new Date().getFullYear() }}</span>
     </footer>
