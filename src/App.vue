@@ -19,7 +19,7 @@
     <footer
       class="fixed bottom-0 w-full flex h-12 items-center justify-center bg-blue-500 font-bold text-white"
     >
-      <span class="">{{ new Date().getFullYear() }}</span>
+      <span class="">Made in {{ new Date().getFullYear() }}</span>
     </footer>
   </div>
 </template>
