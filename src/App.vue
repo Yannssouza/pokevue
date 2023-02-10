@@ -1,12 +1,14 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
-  <div>
-    <nav>
-      <div
-        class="flex h-12 items-center justify-center xl:justify-start gap-12 px-8 bg-blue-500 p-5 font-bold text-white"
-      >
+  <div
+    class="flex h-screen w-screen items-center justify-center bg-cover bg-fixed"
+    style="background-image: url(src/assets/23236924.jpg)"
+  >
+    <nav
+      class="fixed top-0 flex h-12 w-full items-center justify-center bg-red-500 font-bold text-white"
+    >
+      <div class="flex justify-center gap-10">
         <router-link to="/">Inicio</router-link>
         <router-link to="/About">Sobre</router-link>
       </div>
@@ -17,7 +19,7 @@
     </main>
 
     <footer
-      class="fixed bottom-0 w-full flex h-12 items-center justify-center bg-blue-500 font-bold text-white"
+      class="fixed bottom-0 flex h-12 w-full items-center justify-center bg-red-500 font-bold text-white"
     >
       <span class="">Made in {{ new Date().getFullYear() }}</span>
     </footer>

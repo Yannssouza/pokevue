@@ -1,11 +1,12 @@
 <template>
-  <div class="container mx-auto mt-48 xl:mt-12 flex justify-center">
+  <div
+    class="container mx-auto flex flex-wrap justify-center rounded-2xl bg-white shadow-2xl"
+  >
     <div class="flex justify-center">
-      <div class="max-w-sm rounded-l-lg bg-white border-l border-t border-b">
-        <a>
+      <div class="max-w-sm">
+        <a class="flex h-64 justify-center">
           <img
-            class="rounded-lg"
-            src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+            src="https://www.pngall.com/wp-content/uploads/5/Pikachu-PNG-HD-Image.png"
             alt=""
           />
         </a>
@@ -19,7 +20,7 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <div class="max-w-sm rounded-r-lg bg-white border-r border-t border-b">
+      <div class="max-w-sm">
         <div class="p-6">
           <h5 class="mb-2 text-xl font-medium text-gray-900">Card title</h5>
           <p class="mb-4 text-base text-gray-700">
