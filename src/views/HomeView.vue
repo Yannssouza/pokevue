@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
-  <main>Home</main>
+  <div><h1>Hello World!</h1></div>
 </template>
