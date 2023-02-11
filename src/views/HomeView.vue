@@ -29,7 +29,6 @@ const selectPokemon = async (pokemon) => {
   await fetch(pokemon.url)
     .then((res) => res.json())
     .then((res) => (selectedPokemon.value = res));
-  console.log(selectedPokemon.value);
 };
 </script>
 

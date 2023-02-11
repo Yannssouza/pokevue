@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="main-bg flex h-screen w-screen flex-col justify-between bg-cover bg-fixed"
+    class="main-bg flex h-screen w-screen flex-col justify-between bg-cover bg-fixed bg-main"
   >
     <nav
       class="flex h-12 w-full justify-center bg-red-500 font-bold text-white shadow xl:justify-start xl:px-8"
@@ -26,8 +26,3 @@
   </div>
 </template>
 
-<style>
-.main-bg {
-  background-image: url(src/assets/background.jpg);
-}
-</style>
