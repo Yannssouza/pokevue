@@ -5,7 +5,7 @@ const pokemonUpperCase =
 </script>
 
 <template>
-  <div class="py flex flex-col items-center justify-center rounded-xl border">
+  <div class="py flex flex-col items-center justify-center rounded-xl border hover:bg-red-500 active:bg-red-700">
     <a class="flex h-24 w-24 basis-1/2 items-center justify-center">
       <img :src="spritesURL" alt="" />
     </a>
