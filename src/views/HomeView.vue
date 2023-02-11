@@ -28,28 +28,27 @@ const pokemonFilter = computed(() => {
 const selectPokemon = async (pokemon) => {
   await fetch(pokemon.url)
     .then((res) => res.json())
-    .then(res => selectedPokemon.value = res);
+    .then((res) => (selectedPokemon.value = res));
   console.log(selectedPokemon.value);
 };
 </script>
 
 <template>
   <div
-    class="container mx-auto flex max-h-128 max-w-4xl flex-col justify-between rounded-2xl bg-white shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
+    class="container mx-auto flex max-w-4xl flex-col max-h-128 justify-between rounded-2xl bg-neutral-100 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
   >
-    <div class="basis-1/2">
+    <div class="basis-1/2 xl:flex xl:justify-center">
       <PokemonCard
-      :name="selectedPokemon?.name"
-      :sprite="selectedPokemon?.sprites.other.home.front_default"
-      :xp="selectedPokemon?.base_experience"
-      :type="selectedPokemon?.types[0].type.name"
-      :weight="selectedPokemon?.weight"
-      :height="selectedPokemon?.height"
+        :name="selectedPokemon?.name"
+        :sprite="selectedPokemon?.sprites.other.home.front_default"
+        :xp="selectedPokemon?.base_experience"
+        :type="selectedPokemon?.types[0].type.name"
+        :weight="selectedPokemon?.weight"
+        :height="selectedPokemon?.height"
       />
-
     </div>
     <div
-      class="grid basis-1/2 grid-cols-3 items-center justify-center overflow-x-auto xl:gap-2 xl:p-6"
+      class="grid basis-1/2 grid-cols-3 justify-center overflow-x-auto xl:gap-2 xl:p-6"
     >
       <div class="search-bar col-span-3">
         <div class="mb-3">
