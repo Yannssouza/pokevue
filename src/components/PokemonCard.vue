@@ -1,4 +1,5 @@
 <script setup>
+import pokemonEgg from "../assets/pokemonEgg.png"
 const pokemon = defineProps([
   "sprite",
   "name",
@@ -14,7 +15,7 @@ const pokemon = defineProps([
     <div class="pt-6 xl:pt-0">
       <a class="flex h-32 w-32 items-center justify-center">
         <img v-if="pokemon.name" :src="pokemon.sprite" alt="" />
-        <img v-else src="src/assets/pokemonEgg.png" alt="" />
+        <img v-else :src="pokemonEgg" alt="" />
       </a>
     </div>
     <div class="p-5 text-center">
