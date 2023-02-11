@@ -40,7 +40,12 @@ const selectPokemon = async (pokemon) => {
       <PokemonCard
         :name="selectedPokemon?.name"
         :sprite="selectedPokemon?.sprites.other.home.front_default"
-        :xp="selectedPokemon?.base_experience"
+        :hp="selectedPokemon?.stats[0].base_stat"
+        :attack="selectedPokemon?.stats[1].base_stat"
+        :defense="selectedPokemon?.stats[2].base_stat"
+        :sAttack="selectedPokemon?.stats[3].base_stat"
+        :sDefense="selectedPokemon?.stats[4].base_stat"
+        :speed="selectedPokemon?.stats[5].base_stat"
         :type="selectedPokemon?.types[0].type.name"
         :weight="selectedPokemon?.weight"
         :height="selectedPokemon?.height"

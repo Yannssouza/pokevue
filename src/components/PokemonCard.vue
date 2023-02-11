@@ -3,7 +3,12 @@ import pokemonEgg from "../assets/pokemonEgg.png";
 const pokemon = defineProps([
   "sprite",
   "name",
-  "xp",
+  "hp",
+  "attack",
+  "defense",
+  "sAttack",
+  "sDefense",
+  "speed",
   "weight",
   "type",
   "height",
@@ -23,41 +28,41 @@ const pokemon = defineProps([
         {{ pokemon.name || "???" }}
       </h5>
       <div
-        v-if="pokemon.xp"
+        v-if="pokemon.hp"
         class="grid grid-cols-4 items-center justify-center gap-4 border-b-2"
       >
         <div class="mb-2 flex flex-row items-center justify-center">
-          <h2 class="pr-2 font-medium text-gray-900">Base XP:</h2>
-          <p class="text-base text-gray-700">{{ pokemon.xp }}</p>
+          <h2 class="pr-2 font-medium text-gray-900">hp:</h2>
+          <p class="text-base text-gray-700">{{ pokemon.hp }}</p>
         </div>
         <div class="mb-2 flex flex-row items-center justify-center">
-          <h2 class="pr-2 font-medium text-gray-900">Tipo:</h2>
-          <p class="text-base text-gray-700">{{ pokemon.type }}</p>
+          <h2 class="pr-2 font-medium text-gray-900">attack:</h2>
+          <p class="text-base text-gray-700">{{ pokemon.attack }}</p>
         </div>
         <div class="mb-2 flex flex-row items-center justify-center">
-          <h2 class="pr-2 font-medium text-gray-900">Peso:</h2>
-          <p class="text-base text-gray-700">{{ pokemon.weight }}</p>
+          <h2 class="pr-2 font-medium text-gray-900">defense:</h2>
+          <p class="text-base text-gray-700">{{ pokemon.defense }}</p>
         </div>
         <div class="mb-2 flex flex-row items-center justify-center">
-          <h2 class="pr-2 font-medium text-gray-900">Altura:</h2>
-          <p class="text-base text-gray-700">{{ pokemon.height }}</p>
+          <h2 class="pr-2 font-medium text-gray-900">special attack:</h2>
+          <p class="text-base text-gray-700">{{ pokemon.sAttack }}</p>
         </div>
-        <!--        <div class="mb-2 flex flex-row items-center justify-center">-->
-        <!--          <h2 class="pr-2 font-medium text-gray-900">Altura:</h2>-->
-        <!--          <p class="text-base text-gray-700">10</p>-->
-        <!--        </div>-->
-        <!--        <div class="mb-2 flex flex-row items-center justify-center">-->
-        <!--          <h2 class="pr-2 font-medium text-gray-900">Tipo:</h2>-->
-        <!--          <p class="text-base text-gray-700">10</p>-->
-        <!--        </div>-->
-        <!--        <div class="mb-2 flex flex-row items-center justify-center">-->
-        <!--          <h2 class="pr-2 font-medium text-gray-900">Altura:</h2>-->
-        <!--          <p class="text-base text-gray-700">10</p>-->
-        <!--        </div>-->
-        <!--        <div class="mb-2 flex flex-row items-center justify-center">-->
-        <!--          <h2 class="pr-2 font-medium text-gray-900">Tipo:</h2>-->
-        <!--          <p class="text-base text-gray-700">10</p>-->
-        <!--        </div>-->
+        <div class="mb-2 flex flex-row items-center justify-center">
+          <h2 class="pr-2 font-medium text-gray-900">special defense:</h2>
+          <p class="text-base text-gray-700">{{pokemon.sDefense}}</p>
+        </div>
+        <div class="mb-2 flex flex-row items-center justify-center">
+          <h2 class="pr-2 font-medium text-gray-900">speed:</h2>
+          <p class="text-base text-gray-700">{{pokemon.speed}}</p>
+        </div>
+        <div class="mb-2 flex flex-row items-center justify-center">
+          <h2 class="pr-2 font-medium text-gray-900">type:</h2>
+          <p class="text-base text-gray-700">{{pokemon.type}}</p>
+        </div>
+        <div class="mb-2 flex flex-row items-center justify-center">
+          <h2 class="pr-2 font-medium text-gray-900">altura:</h2>
+          <p class="text-base text-gray-700">{{pokemon.height}}</p>
+        </div>
       </div>
     </div>
   </div>
