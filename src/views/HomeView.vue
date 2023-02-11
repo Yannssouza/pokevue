@@ -39,6 +39,7 @@ const selectPokemon = async (pokemon) => {
     <div class="basis-1/2 xl:flex xl:justify-center">
       <PokemonCard
         :name="selectedPokemon?.name"
+        :xp="selectedPokemon?.base_experience"
         :sprite="selectedPokemon?.sprites.other.home.front_default"
         :hp="selectedPokemon?.stats[0].base_stat"
         :attack="selectedPokemon?.stats[1].base_stat"

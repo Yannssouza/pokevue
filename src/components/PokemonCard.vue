@@ -9,9 +9,11 @@ const pokemon = defineProps([
   "sAttack",
   "sDefense",
   "speed",
-  "weight",
+  "xp",
   "type",
   "height",
+  "weight",
+
 ]);
 </script>
 
