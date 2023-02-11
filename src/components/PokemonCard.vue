@@ -19,7 +19,7 @@ const pokemon = defineProps([
 
 <template>
   <div class="flex flex-col items-center justify-center">
-    <div class="pt-6 xl:pt-0">
+    <div class="xl:pt-0">
       <a class="flex h-32 w-32 items-center justify-center">
         <img v-if="pokemon.name" :src="pokemon.sprite" alt="" />
         <img v-else :src="pokemonEgg" alt="" />
