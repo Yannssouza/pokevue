@@ -6,7 +6,7 @@ module.exports = {
         128: "30rem",
       },
       backgroundImage: {
-        main: "url('/src/assets/background.jpg')"
+        main: "url('/src/assets/background.jpg')",
       },
     },
   },

@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="main-bg flex h-screen w-screen flex-col justify-between bg-cover bg-fixed bg-main"
+    class="main-bg flex h-screen w-screen flex-col justify-between bg-main bg-cover bg-fixed"
   >
     <nav
       class="flex h-12 w-full justify-center bg-red-500 font-bold text-white shadow xl:justify-start xl:px-8"
@@ -25,4 +25,3 @@
     </footer>
   </div>
 </template>
-

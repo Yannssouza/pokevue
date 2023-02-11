@@ -11,7 +11,7 @@ let searchPokemon = ref("");
 let selectedPokemon = reactive(ref());
 
 onMounted(() => {
-  fetch("https://pokeapi.co/api/v2/pokemon?limit=1008&offset=0")
+  fetch("https://pokeapi.co/api/v2/pokemon?limit=905&offset=0")
     .then((res) => res.json())
     .then((res) => (pokemonListVar.value = res.results));
 });

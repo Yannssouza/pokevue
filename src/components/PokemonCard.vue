@@ -1,5 +1,5 @@
 <script setup>
-import pokemonEgg from "../assets/pokemonEgg.png"
+import pokemonEgg from "../assets/pokemonEgg.png";
 const pokemon = defineProps([
   "sprite",
   "name",
