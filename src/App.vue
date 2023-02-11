@@ -1,10 +1,9 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div
     class="flex h-screen w-screen flex-col justify-between bg-cover bg-fixed"
-    style="background-image: url(src/assets/23236924.jpg)"
+    style="background-image: url(src/assets/background.jpg)"
   >
     <nav
       class="flex h-12 w-full justify-center bg-red-500 font-bold text-white shadow xl:justify-start xl:px-8"

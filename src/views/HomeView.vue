@@ -35,7 +35,7 @@ const selectPokemon = async (pokemon) => {
 
 <template>
   <div
-    class="container mx-auto flex max-w-4xl flex-col max-h-128 justify-between rounded-2xl bg-neutral-100 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
+    class="container mx-auto flex max-h-128 max-w-4xl flex-col justify-between rounded-2xl bg-neutral-100 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
   >
     <div class="basis-1/2 xl:flex xl:justify-center">
       <PokemonCard
