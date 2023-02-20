@@ -61,7 +61,10 @@ const getEvolutionChain = async (pokemon) => {
         class="absolute top-2 px-3"
         @click="[(displayList = !displayList), (displayCard = !displayCard)]"
       >
-        Return
+        <span
+          class="rounded bg-neutral-200 py-2 px-3 text-2xl text-neutral-900 hover:bg-neutral-300 active:bg-neutral-400"
+          >🡠</span
+        >
       </button>
       <PokemonCard
         :name="selectedPokemon?.name"
