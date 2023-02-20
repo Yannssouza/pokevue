@@ -9,8 +9,8 @@
     >
       <div class="flex items-center gap-10">
         <h1 class="text-2xl">Pokédex</h1>
-        <router-link to="/">Inicio</router-link>
-        <router-link to="/About">Sobre</router-link>
+        <router-link to="/home">Inicio</router-link>
+        <router-link to="/about">Sobre</router-link>
       </div>
     </nav>
 

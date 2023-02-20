@@ -2,6 +2,7 @@
 import { onMounted, reactive, ref, computed } from "vue";
 import PokemonList from "../components/PokemonList.vue";
 import PokemonCard from "../components/PokemonCard.vue";
+import EvolutionChain from "../components/EvolutionChain.vue";
 
 let spritesURL = ref(
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
@@ -9,6 +10,10 @@ let spritesURL = ref(
 let pokemonListVar = reactive(ref());
 let searchPokemon = ref("");
 let selectedPokemon = reactive(ref());
+let pokemonSpecie = reactive(ref());
+let evolutionChain = reactive(ref());
+let displayCard = ref(false);
+let displayList = ref(true);
 
 onMounted(() => {
   fetch("https://pokeapi.co/api/v2/pokemon?limit=905&offset=0")
@@ -30,13 +35,31 @@ const selectPokemon = async (pokemon) => {
     .then((res) => res.json())
     .then((res) => (selectedPokemon.value = res));
 };
+const getEvolutionChain = async (pokemon) => {
+  await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name}`)
+    .then((res) => res.json())
+    .then((res) => {
+      pokemonSpecie.value = res;
+    });
+  await fetch(pokemonSpecie.value.evolution_chain.url)
+    .then((res) => res.json())
+    .then((res) => {
+      evolutionChain.value = res;
+    });
+};
 </script>
 
 <template>
   <div
-    class="container mx-auto flex max-h-128 max-w-4xl flex-col justify-between rounded-2xl bg-neutral-100 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
+    class="container mx-auto flex max-h-128 max-w-4xl flex-col justify-center rounded-2xl bg-neutral-100 py-2 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
   >
-    <div class="basis-1/2 xl:flex xl:justify-center">
+    <div v-show="displayCard" class="flex relative basis-1/2 flex-col justify-center">
+      <button
+        class="absolute top-2 px-2"
+        @click="[(displayList = !displayList), (displayCard = !displayCard)]"
+      >
+       Return
+      </button>
       <PokemonCard
         :name="selectedPokemon?.name"
         :xp="selectedPokemon?.base_experience"
@@ -51,8 +74,31 @@ const selectPokemon = async (pokemon) => {
         :weight="selectedPokemon?.weight"
         :height="selectedPokemon?.height"
       />
+      <EvolutionChain
+        :name1="evolutionChain?.chain.species.name"
+        :sprite1="
+          spritesURL + evolutionChain?.chain.species.url.split('/')[6] + '.png'
+        "
+        :name2="evolutionChain?.chain?.evolves_to[0]?.species.name"
+        :sprite2="
+          spritesURL +
+          evolutionChain?.chain?.evolves_to[0]?.species.url.split('/')[6] +
+          '.png'
+        "
+        :name3="
+          evolutionChain?.chain?.evolves_to[0]?.evolves_to[0]?.species.name
+        "
+        :sprite3="
+          spritesURL +
+          evolutionChain?.chain?.evolves_to[0]?.evolves_to[0]?.species.url.split(
+            '/'
+          )[6] +
+          '.png'
+        "
+      />
     </div>
     <div
+      v-show="displayList"
       class="grid basis-1/2 grid-cols-3 justify-center overflow-x-auto xl:gap-2 xl:p-6"
     >
       <div class="search-bar col-span-3">
@@ -71,7 +117,14 @@ const selectPokemon = async (pokemon) => {
         :key="pokemon.name"
         :name="pokemon.name"
         :spritesURL="spritesURL + pokemon.url.split('/')[6] + '.png'"
-        @click="selectPokemon(pokemon)"
+        @click="
+          [
+            selectPokemon(pokemon),
+            getEvolutionChain(pokemon),
+            (displayCard = !displayCard),
+            (displayList = !displayList),
+          ]
+        "
       />
     </div>
   </div>

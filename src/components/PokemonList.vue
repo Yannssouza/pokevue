@@ -1,7 +1,7 @@
 <script setup>
 const pokemon = defineProps(["name", "spritesURL"]);
-const pokemonUpperCase =
-  pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+// const pokemonUpperCase =
+//   pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 </script>
 
 <template>
@@ -11,6 +11,6 @@ const pokemonUpperCase =
     <a class="flex h-24 w-24 basis-1/2 items-center justify-center">
       <img :src="spritesURL" alt="" />
     </a>
-    <p class="basis-1/2">{{ pokemonUpperCase }}</p>
+    <p class="basis-1/2">{{ pokemon.name }}</p>
   </div>
 </template>
