@@ -22,7 +22,7 @@ const pokemon = defineProps([
     </div>
     <div
       v-if="pokemon.name2"
-      class="py flex flex-col items-center justify-center rounded-xl border hover:bg-red-500 active:bg-red-700"
+      class="py flex flex-col items-center justify-center rounded-xl border"
     >
       <a class="flex h-24 w-24 basis-1/2 items-center justify-center">
         <img :src="sprite2" alt="" />
@@ -31,7 +31,7 @@ const pokemon = defineProps([
     </div>
     <div
       v-if="pokemon.name3"
-      class="py flex flex-col items-center justify-center rounded-xl border hover:bg-red-500 active:bg-red-700"
+      class="py flex flex-col items-center justify-center rounded-xl border"
     >
       <a class="flex h-24 w-24 basis-1/2 items-center justify-center">
         <img :src="sprite3" alt="" />

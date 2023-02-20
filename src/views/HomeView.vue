@@ -53,12 +53,15 @@ const getEvolutionChain = async (pokemon) => {
   <div
     class="container mx-auto flex max-h-128 max-w-4xl flex-col justify-center rounded-2xl bg-neutral-100 py-2 shadow-2xl md:flex-row lg:flex-row xl:flex-row 2xl:flex-row"
   >
-    <div v-show="displayCard" class="flex relative basis-1/2 flex-col justify-center">
+    <div
+      v-show="displayCard"
+      class="relative flex basis-1/2 flex-col justify-center"
+    >
       <button
-        class="absolute top-2 px-2"
+        class="absolute top-2 px-3"
         @click="[(displayList = !displayList), (displayCard = !displayCard)]"
       >
-       Return
+        Return
       </button>
       <PokemonCard
         :name="selectedPokemon?.name"
